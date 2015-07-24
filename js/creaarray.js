@@ -1,25 +1,57 @@
 (function (app) {
   'use strict';
   
-  app.controller('SimpleArrayCtrl', ['$scope', function SimpleArrayCtrl($scope) {
+  app.controller('guardaDatosCheck', ['$scope', function guardaDatosCheck($scope) {
     // partes
-    $scope.partes = ['MENTE', 'OJOS', 'CUELLO', 'ESPALDA', 'MUÑECAS', 'RODILLAS', 'TOBILLOS'];
+    $scope.partes = ['video_mente.mov', 'video_ojos.mov', 'video_cuello.mov', 'video_espalda.mov', 'video_muñecas.mov', 'video_rodillas.mov', 'video_tobillos.mov'];
+
     
+    /*$scope.partes = [
+        {
+            nombre:'mente',
+            video:'video mente',
+            información:'no definida',
+            precauciones:'no definida',
+            img:'ModelDataa1'
+        },
+        {
+            nombre:'cuello',
+            video:'video cuello',
+            información:'no definida',
+            precauciones:'no definida',
+            img:'ModelDataa2'
+        },
+        {
+            nombre:'espalda',
+            video:'video espalda',
+            información:'no definida',
+            precauciones:'no definida',
+            img:'ModelDataa3'
+        },
+        {
+            nombre:'tobillos',
+            video:'video tobillos',
+            información:'no definida',
+            precauciones:'no definida',
+            img:'ModelDataa4'
+        }
+    ];*/
+      
     
       
-    // selected partes
+    // Partes seleccionadas
     $scope.selection = [];
     
-    // toggle selection for a given zona by name
+    // selección de palanca para una zona determinada por su nombre
     $scope.toggleSelection = function toggleSelection(partesCuerpo) {
       var idx = $scope.selection.indexOf(partesCuerpo);
       
-      // is currently selected
+      // está seleccionado en ese momento
       if (idx > -1) {
         $scope.selection.splice(idx, 1);
       }
       
-      // is newly selected
+      // se acaba de seleccionar
       else {
         $scope.selection.push(partesCuerpo);
       }
@@ -38,15 +70,15 @@
       { name: 'TOBILLOS', selected: false }
     ];
     
-    // selected partes
+    // Partes seleccionadas
     $scope.selection = [];
     
-    // helper method
+    // método de ayuda
     $scope.seleccionarParte = function selecionarParte() {
       return filterFilter($scope.partes, { selected: true });
     };
     
-    // watch partes for changes
+    // ver piezas para cambios
     $scope.$watch('partes|filter:{selected:true}', function (nv) {
       $scope.selection = nv.map(function (zona) {
         return zona.name;
@@ -55,7 +87,7 @@
   }]);
   
   /**
-   * custom filter
+   * filtro personalizado
    */
   app.filter('parteseleccion', ['filterFilter', function (filterFilter) {
     return function parteseleccion(input, prop) {

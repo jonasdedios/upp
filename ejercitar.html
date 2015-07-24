@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Upptimus | Preparar Rutina</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -23,8 +23,8 @@
                     </div>
                 </div>
             </div>
-            <div ng-controller="SimpleArrayCtrl" class="container escoger">
-                <div class="col-md-12">La siguiente rutina constará de ejercicios de {{selection|json|lowercase}}
+            <div ng-controller="guardaDatosCheck" class="container escoger">
+                <div class="col-md-12">La siguiente rutina constará de ejercicios de {{selection|json}}
                 </div>
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9">
@@ -36,19 +36,19 @@
                               <div class="col-md-8 cuerpo">
                                   <form class="col-md-8 ">
                     
-                                    <div class="form-group" ng-show="ModelData.a1" >
+                                    <div class="form-group" ng-show="m1" >
                                         <img alt="mente" src="img/mente.png"> 
                                     </div>
 
-                                    <div class="form-group" ng-show="ModelData.a2" >
+                                    <div class="form-group" ng-show="m2" >
                                         <img alt="cuello" src="img/cuello.png"> 
                                     </div>
 
-                                    <div class="form-group" ng-show="ModelData.a3" >
+                                    <div class="form-group" ng-show="m3" >
                                         <img alt="espalda" src="img/espalda.png"> 
                                     </div>
 
-                                    <div class="form-group" ng-show="ModelData.a4" >
+                                    <div class="form-group" ng-show="m4" >
                                         <img alt="tobillos" src="img/tobillos.png"> 
                                     </div>
 
@@ -61,23 +61,23 @@
                                 <div class="form-group">
                                     
                     
-                    <label  class="salto">
-                        <input type="checkbox" ng-model="ModelData.a1" name="seleccionarPartes[]" value="{{partes[0]}}" ng-checked="selection.indexOf(partes[0]) > -1" ng-click="toggleSelection(partes[0])"/>{{partes[0]}} 
-                    </label>
-                    <label  class="salto">
-                        <input type="checkbox" ng-model="ModelData.a2" name="seleccionarPartes[]" value="{{partes[2]}}" ng-checked="selection.indexOf(partes[2]) > -1" ng-click="toggleSelection(partes[2])"/>{{partes[2]}} 
-                    </label>
-                    <label  class="salto">
-                        <input type="checkbox" ng-model="ModelData.a3" name="seleccionarPartes[]" value="{{partes[3]}}" ng-checked="selection.indexOf(partes[3]) > -1" ng-click="toggleSelection(partes[3])"/>{{partes[3]}} 
-                    </label>
-                    <label  class="salto">
-                        <input type="checkbox" ng-model="ModelData.a4" name="seleccionarPartes[]" value="{{partes[6]}}" ng-checked="selection.indexOf(partes[4]) > -1" ng-click="toggleSelection(partes[6])"/>{{partes[6]}} 
-                    </label>
+                                    <label  class="salto">
+                                        <input type="checkbox" ng-model="m1" name="seleccionarPartes[]" value="{{partes[0]}}" ng-checked="selection.indexOf(partes[0]) > -1" ng-click="toggleSelection(partes[0])"/>Mente
+                                    </label>
+                                    <label  class="salto">
+                                        <input type="checkbox" ng-model="m2" name="seleccionarPartes[]" value="{{partes[2]}}" ng-checked="selection.indexOf(partes[2]) > -1" ng-click="toggleSelection(partes[2])"/>Cuello
+                                    </label>
+                                    <label  class="salto">
+                                        <input type="checkbox" ng-model="m3" name="seleccionarPartes[]" value="{{partes[3]}}" ng-checked="selection.indexOf(partes[3]) > -1" ng-click="toggleSelection(partes[3])"/>Espalda
+                                    </label>
+                                    <label  class="salto">
+                                        <input type="checkbox" ng-model="m4" name="seleccionarPartes[]" value="{{partes[6]}}" ng-checked="selection.indexOf(partes[4]) > -1" ng-click="toggleSelection(partes[6])"/>Tobillos 
+                                    </label>
                                         
                     
                 
                                   <!--<label ng-repeat="partesCuerpo in partes" class="salto">
-                                    <input type="checkbox" name="seleccionarPartes[]" value="{{partesCuerpo}}" ng-checked="selection.indexOf(partesCuerpo) > -1" ng-click="toggleSelection(partesCuerpo)"> {{partesCuerpo}}
+                                    <input type="checkbox" ng-model="we" name="seleccionarPartes[partesCuerpo.img]" value="{{partesCuerpo.img}}" ng-checked="selection.indexOf(partesCuerpo.img) > -1" ng-click="toggleSelection(partesCuerpo.img)"> {{partesCuerpo.nombre}}
                                   </label>-->
                                 </div>
                                   <button class="btn btn-default boton">Comenzar Rutina</button>
