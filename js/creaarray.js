@@ -1,10 +1,17 @@
 (function (app) {
   'use strict';
   
-  app.controller('guardaDatosCheck', ['$scope', function guardaDatosCheck($scope) {
+  app.controller('guardaDatosCheck', ['$scope', function guardaDatosCheck($scope,zonasRecibidas) {
     // partes
     $scope.partes = ['video_mente.mov', 'video_ojos.mov', 'video_cuello.mov', 'video_espalda.mov', 'video_muñecas.mov', 'video_rodillas.mov', 'video_tobillos.mov'];
+    
+      /*$scope.zona.mente;
+      $scope.zona.cuello;
+      $scope.zona.espalda;
+      $scope.zona.tobillos;*/
+    
 
+    
     
     /*$scope.partes = [
         {
@@ -85,6 +92,8 @@
       });
     }, true);
   }]);
+    
+    zonasRecibidas.rutina = $scope.selection;
   
   /**
    * filtro personalizado

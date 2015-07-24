@@ -36,19 +36,19 @@
                               <div class="col-md-8 cuerpo">
                                   <form class="col-md-8 ">
                     
-                                    <div class="form-group" ng-show="m1" >
+                                    <div class="form-group" ng-show="zona.mente" >
                                         <img alt="mente" src="img/mente.png"> 
                                     </div>
 
-                                    <div class="form-group" ng-show="m2" >
+                                    <div class="form-group" ng-show="zona.cuello" >
                                         <img alt="cuello" src="img/cuello.png"> 
                                     </div>
 
-                                    <div class="form-group" ng-show="m3" >
+                                    <div class="form-group" ng-show="zona.espalda" >
                                         <img alt="espalda" src="img/espalda.png"> 
                                     </div>
 
-                                    <div class="form-group" ng-show="m4" >
+                                    <div class="form-group" ng-show="zona.tobillos" >
                                         <img alt="tobillos" src="img/tobillos.png"> 
                                     </div>
 
@@ -62,16 +62,16 @@
                                     
                     
                                     <label  class="salto">
-                                        <input type="checkbox" ng-model="m1" name="seleccionarPartes[]" value="{{partes[0]}}" ng-checked="selection.indexOf(partes[0]) > -1" ng-click="toggleSelection(partes[0])"/>Mente
+                                        <input type="checkbox" ng-model="zona.mente" name="seleccionarPartes[]" value="{{partes[0]}}" ng-checked="selection.indexOf(partes[0]) > -1" ng-click="toggleSelection(partes[0])"/>Mente
                                     </label>
                                     <label  class="salto">
-                                        <input type="checkbox" ng-model="m2" name="seleccionarPartes[]" value="{{partes[2]}}" ng-checked="selection.indexOf(partes[2]) > -1" ng-click="toggleSelection(partes[2])"/>Cuello
+                                        <input type="checkbox" ng-model="zona.cuello" name="seleccionarPartes[]" value="{{partes[2]}}" ng-checked="selection.indexOf(partes[2]) > -1" ng-click="toggleSelection(partes[2])"/>Cuello
                                     </label>
                                     <label  class="salto">
-                                        <input type="checkbox" ng-model="m3" name="seleccionarPartes[]" value="{{partes[3]}}" ng-checked="selection.indexOf(partes[3]) > -1" ng-click="toggleSelection(partes[3])"/>Espalda
+                                        <input type="checkbox" ng-model="zona.espalda" name="seleccionarPartes[]" value="{{partes[3]}}" ng-checked="selection.indexOf(partes[3]) > -1" ng-click="toggleSelection(partes[3])"/>Espalda
                                     </label>
                                     <label  class="salto">
-                                        <input type="checkbox" ng-model="m4" name="seleccionarPartes[]" value="{{partes[6]}}" ng-checked="selection.indexOf(partes[4]) > -1" ng-click="toggleSelection(partes[6])"/>Tobillos 
+                                        <input type="checkbox" ng-model="zona.tobillos" name="seleccionarPartes[]" value="{{partes[6]}}" ng-checked="selection.indexOf(partes[4]) > -1" ng-click="toggleSelection(partes[6])"/>Tobillos 
                                     </label>
                                         
                     
@@ -96,7 +96,9 @@
         
         
             </div>
-            
+            <div ng-controller="zonasRecibidas">
+                La rutina consta de: {{zonas}}
+            </div>            
         </div> 
         
         
@@ -105,6 +107,7 @@
         <script src="js/angular.min.js"></script> <!--AngularJS-->
         <script src="js/inicializar.js"></script><!---->
         <script src="js/creaarray.js"></script>
+        <script src="js/servicio.js"></script>
         <script src="js/jquery-1.11.3.min.js"></script><!--JQuery-->
         <script src="js/bootstrap.min.js"></script><!--Bootstrap-->
         
